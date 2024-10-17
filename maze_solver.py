@@ -43,7 +43,7 @@ class Line:
 
 
 class Cell:
-    def __init__(self, win):
+    def __init__(self, win=None):
         self.has_left_wall = True
         self.has_right_wall = True
         self.has_top_wall = True
@@ -85,7 +85,7 @@ class Cell:
 
 
 class Maze:
-    def __init__(self, x1, y1, num_rows, num_cols, cell_size_x, cell_size_y, win):
+    def __init__(self, x1, y1, num_rows, num_cols, cell_size_x, cell_size_y, win=None):
         self._cells = []
         self._x1 = x1
         self._y1 = y1
@@ -106,8 +106,6 @@ class Maze:
         for i in range(len(self._cells)):
             for j in range(len(self._cells[i])):
                 self._draw_cell(i, j)
-        
-
 
     def _draw_cell(self, i, j):
         if self._win == None:
